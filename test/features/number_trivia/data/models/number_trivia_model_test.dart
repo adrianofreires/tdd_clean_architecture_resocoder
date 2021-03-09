@@ -6,7 +6,7 @@ import 'package:tdd_clean_architecture_resocoder/features/number_trivia/domain/e
 import '../../../../fixtures/fixture_reader.dart';
 
 void main() {
-  final tNumberTriviaModel = NumberTriviaModel(number: 1, text: 'Test Text');
+  final tNumberTriviaModel = NumberTriviaModel(text: 'Test Text', number: 1);
 
   test(
     'deve ser uma subclasse da entidade NumberTrivia',
@@ -16,7 +16,7 @@ void main() {
     },
   );
 
-  group('fromJSON', () {
+  group('fromJson', () {
     test(
       'deverá retornar um modelo válido quando o JSON number for um inteiro ',
       () async {
@@ -46,14 +46,14 @@ void main() {
 
   group('toJson', () {
     test(
-      'deverá retornar um JSON map contendo as propriedades dos dados',
+      'deverá retornar um Json Map com as propriedades dos dados ',
       () async {
         // act
         final result = tNumberTriviaModel.toJson();
         // assert
         final expectedMap = {
-          "text": "Test Text",
-          "number": 1,
+          'text': 'Test Text',
+          'number': 1,
         };
         expect(result, expectedMap);
       },
