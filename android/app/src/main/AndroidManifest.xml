@@ -1,7 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tdd_clean_architecture_resocoder">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="tdd_clean_architecture_resocoder"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
